@@ -39,10 +39,11 @@
         .cake {
             position: relative;
             width: 200px;
-            height: 200px;
+            height: 120px;
             background: #f4a261;
-            border-radius: 20px;
+            border-radius: 10px 10px 0 0;
             margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .cake::before {
@@ -54,7 +55,7 @@
             width: 60%;
             height: 40px;
             background: #e76f51;
-            border-radius: 20px 20px 0 0;
+            border-radius: 10px 10px 0 0;
         }
 
         .candle {
@@ -78,6 +79,12 @@
             background: #e9c46a;
             border-radius: 50%;
             box-shadow: 0 0 10px 2px #e9c46a;
+            animation: flicker 1s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
         }
 
         .teddy {
@@ -85,28 +92,61 @@
             width: 60px;
             height: 80px;
             background: #8d99ae;
-            border-radius: 30px;
-            bottom: -40px;
+            border-radius: 50% 50% 40% 40%;
+            bottom: -60px;
             left: 50%;
             transform: translateX(-50%);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
 
         .teddy::before, .teddy::after {
             content: "";
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             background: #8d99ae;
             border-radius: 50%;
-            top: 0;
+            top: -15px;
         }
 
         .teddy::before {
-            left: -15px;
+            left: -20px;
         }
 
         .teddy::after {
-            right: -15px;
+            right: -20px;
+        }
+
+        .teddy .eyes {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .teddy .eyes::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+            left: -20px;
+        }
+
+        .teddy .nose {
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background: #000;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -116,7 +156,10 @@
     </div>
     <div class="cake">
         <div class="candle"></div>
-        <div class="teddy"></div>
+        <div class="teddy">
+            <div class="eyes"></div>
+            <div class="nose"></div>
+        </div>
     </div>
 </body>
 </html>
