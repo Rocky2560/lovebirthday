@@ -3,162 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Animation</title>
+    <title>Happy Birthday</title>
     <style>
         body {
-            background-color: #1a1a1a;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-color: #f0e68c;
             margin: 0;
-            font-family: 'Courier New', Courier, monospace;
-            color: white;
+            font-family: Arial, sans-serif;
         }
-
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid #00ffcc;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        .card {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #00ffcc; }
-        }
-
         .cake {
             position: relative;
             width: 200px;
-            height: 120px;
-            background: #f4a261;
-            border-radius: 10px 10px 0 0;
-            margin-top: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            height: 200px;
+            background: #ff69b4;
+            border-radius: 10px;
+            margin: 0 auto;
         }
-
-        .cake::before {
-            content: "";
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 40px;
-            background: #e76f51;
-            border-radius: 10px 10px 0 0;
-        }
-
         .candle {
             position: absolute;
-            width: 10px;
-            height: 40px;
-            background: #2a9d8f;
-            top: -40px;
+            top: -30px;
             left: 50%;
             transform: translateX(-50%);
+            width: 10px;
+            height: 30px;
+            background: #fff;
+            border-radius: 5px;
         }
-
-        .candle::before {
-            content: "";
+        .flame {
             position: absolute;
             top: -10px;
             left: 50%;
             transform: translateX(-50%);
             width: 10px;
             height: 10px;
-            background: #e9c46a;
+            background: #ff4500;
             border-radius: 50%;
-            box-shadow: 0 0 10px 2px #e9c46a;
             animation: flicker 1s infinite;
         }
-
         @keyframes flicker {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-
-        .teddy {
-            position: absolute;
-            width: 60px;
-            height: 80px;
-            background: #8d99ae;
-            border-radius: 50% 50% 40% 40%;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .teddy::before, .teddy::after {
-            content: "";
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background: #8d99ae;
-            border-radius: 50%;
-            top: -15px;
-        }
-
-        .teddy::before {
-            left: -20px;
-        }
-
-        .teddy::after {
-            right: -20px;
-        }
-
-        .teddy .eyes {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 10px;
-            height: 10px;
-            background: #000;
-            border-radius: 50%;
-        }
-
-        .teddy .eyes::before {
-            content: "";
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #000;
-            border-radius: 50%;
-            left: -20px;
-        }
-
-        .teddy .nose {
-            position: absolute;
-            top: 35px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 15px;
-            height: 15px;
-            background: #000;
-            border-radius: 50%;
+            50% { opacity: 0.5; }
         }
     </style>
 </head>
 <body>
-    <div class="typewriter">
-        <div class="typewriter-text">Happy Birthday!</div>
-    </div>
-    <div class="cake">
-        <div class="candle"></div>
-        <div class="teddy">
-            <div class="eyes"></div>
-            <div class="nose"></div>
+    <div class="card">
+        <h1>Happy Birthday, My Love!</h1>
+        <div class="cake">
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
         </div>
     </div>
 </body>
