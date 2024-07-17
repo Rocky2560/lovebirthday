@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typewriter Animation</title>
+    <title>Birthday Animation</title>
     <style>
         body {
             background-color: #1a1a1a;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            color: #00ffcc;
             font-family: 'Courier New', Courier, monospace;
+            color: white;
         }
 
         .typewriter {
@@ -34,11 +35,88 @@
             from, to { border-color: transparent }
             50% { border-color: #00ffcc; }
         }
+
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #f4a261;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        .cake::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 40px;
+            background: #e76f51;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .candle {
+            position: absolute;
+            width: 10px;
+            height: 40px;
+            background: #2a9d8f;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .candle::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #e9c46a;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px #e9c46a;
+        }
+
+        .teddy {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background: #8d99ae;
+            border-radius: 30px;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .teddy::before, .teddy::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #8d99ae;
+            border-radius: 50%;
+            top: 0;
+        }
+
+        .teddy::before {
+            left: -15px;
+        }
+
+        .teddy::after {
+            right: -15px;
+        }
     </style>
 </head>
 <body>
     <div class="typewriter">
-        <div class="typewriter-text">Happy Birthday Ensaa!❤️ ❤️ ❤️</div>
+        <div class="typewriter-text">Happy Birthday!</div>
+    </div>
+    <div class="cake">
+        <div class="candle"></div>
+        <div class="teddy"></div>
     </div>
 </body>
 </html>
